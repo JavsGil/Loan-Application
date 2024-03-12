@@ -1,0 +1,43 @@
+├── adapters/
+|   ├── applications/
+│   |    ├── application.controller.ts
+│   |    └── dto/
+│   │        └── create-application.dto.ts
+|   |        └── upadte-application.dto.ts
+│   │     
+|   ├── auth/
+│   |    ├── auth.controller.ts
+│   |    └── dto/
+│   │        ├── login.dto.ts
+|   |        └── register.dto.ts
+│   │     
+├── core/
+│   ├── domain/
+│   │   ├── auth/
+│   │   │   ├── auth.service.ts
+│   │   │   ├── auth.module.ts 
+|   |   |   └── auth.repository.ts
+│   │   |   
+│   │   ├── user/
+│   │   │   ├── jwt/
+|   |   |   |   └── application.entity.ts
+|   |   |   |
+|   |   |   ├── user.service.ts
+│   │   │   ├── user.module.ts
+|   |   |   └── user.repository.ts
+│   │   |
+│   │   └── application/ 
+│   │       ├── application.service.ts
+│   │       ├── application.module.ts
+|   |       └── application.repository.ts
+│   │              
+│   └── infrastructure/
+│       └── database/
+│           ├── database.module.ts
+│           ├── database.providers.ts
+│           └── entities/
+│               └── application.entity.ts
+|               └── user.entity.ts
+├── main.ts
+├── app.module.ts
+└── README.md
