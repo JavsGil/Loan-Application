@@ -1,21 +1,11 @@
 ### Folder strustured see:
 - `folder-structure.txt`
 
-1. Clone the repository:
-- git clone `<URL-del-repositorio>`
-- cd `<directorio-del-proyecto>`
-- cp `.env.example .env`
-2. Make sure you have Docker and Docker Compose installed on your system.
-3. Run `docker-compose up` in the project root with the following content.
-4. Run migrations with `typeorm migration:run`
-
-
-
 ### How to Set Up the Project
 
 1. Clone the repository:
-- git clone `<URL-del-repositorio>`
-- cd `<directorio-del-proyecto>`
+- git clone `<repository-url>`
+- cd `<project-directory>`
 - cp `.env.example .env`
 2. Make sure you have Docker and Docker Compose installed on your system.
 3. Run `docker-compose up` in the project root with the following content.
