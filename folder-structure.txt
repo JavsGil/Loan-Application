@@ -14,19 +14,24 @@
 ├── core/
 │   ├── domain/
 │   │   ├── auth/
+|   |   |   ├── interface/
+|   |   |   |   └── my-auth.interface.ts
 │   │   │   ├── auth.service.ts
 │   │   │   ├── auth.module.ts 
 |   |   |   └── auth.repository.ts
 │   │   |   
 │   │   ├── user/
 │   │   │   ├── jwt/
-|   |   |   |   └── application.entity.ts
-|   |   |   |
+|   |   |   |   └── user.entity.ts
+|   |   |   ├── interface/
+|   |   |   |   └── user.repository.interface.ts
 |   |   |   ├── user.service.ts
 │   │   │   ├── user.module.ts
 |   |   |   └── user.repository.ts
 │   │   |
 │   │   └── application/ 
+|   |       ├── interface/
+|   |       |   └── application.repository.interface.ts
 │   │       ├── application.service.ts
 │   │       ├── application.module.ts
 |   |       └── application.repository.ts
