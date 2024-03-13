@@ -1,26 +1,22 @@
 // user.service.ts
 import { Injectable } from '@nestjs/common';
-import { User } from '../../infrastructure/enities/user.entity';
+import { User } from '../../infrastructure/entities/user.entity';
 import { CreateUserDto } from '../../../adapters/user/dto/user.dto';
-import { UserRepository } from './user.repository';
+import { IUserRepository } from './interface/user.repository.interface';
 
 @Injectable()
 export class UserService {
-  constructor(private readonly userRepository: UserRepository) {}
+  constructor(private readonly userRepository: IUserRepository) {}
 
   async createUser(createUserData: CreateUserDto): Promise<User> {
-    return this.userRepository.createUser(createUserData);
+    return this.userRepository.create(createUserData);
   }
 
-  async findUserById(id: string): Promise<User | null> {
-    return this.userRepository.findUserById(id);
+  async findUserById(id: number): Promise<User | null> {
+    return this.userRepository.findById(id);
   }
 
-  async findUserByUsername(username: string): Promise<User | null> {
-    return this.userRepository.findUserByUsername(username);
-  }
-
-  async findUserByEmail(email: string): Promise<User | null> {
-    return this.userRepository.findUserByEmail(email);
+  async findAllUsers(): Promise<User[] | null> {
+    return this.userRepository.findAll();
   }
 }
