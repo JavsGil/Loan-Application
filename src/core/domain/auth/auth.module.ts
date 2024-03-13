@@ -1,16 +1,12 @@
-// core/domain/auth/auth.module.ts
-
 import { Module } from '@nestjs/common';
-import { AuthController } from '../../../adapters/auth/auth.controller';
-import { AuthService } from './auth.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '../../infrastructure/enities/user.entity'
+import { ConfigModule } from '@nestjs/config';
+import { MyAuthRepository } from './auth.repository';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([User]),
+    ConfigModule.forRoot(),
   ],
-  controllers: [AuthController],
-  providers: [AuthService],
+  providers: [MyAuthRepository],
+  exports: [MyAuthRepository],
 })
 export class AuthModule {}

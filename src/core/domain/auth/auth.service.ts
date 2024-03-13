@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { AuthRepository } from './auth.repository';
+import { MyAuthRepository } from './auth.repository';
 import { LoginDto } from '../../../adapters/auth/dto/login.dto';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly authRepository: AuthRepository) {}
+  constructor(private readonly authRepository: MyAuthRepository) {}
 
   async login(loginDto: LoginDto): Promise<string> {
     const { email, password } = loginDto;
