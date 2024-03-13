@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { ApplicationEntity } from '../../infrastructure/entities/application.entity';
 import { IApplicationRepository } from './interface/application.repository.interface';
+import { ApplicationRepository } from './application.repository';
 
 @Injectable()
 export class ApplicationService {
-  constructor(private readonly applicationRepository: IApplicationRepository) {}
+  constructor(private readonly applicationRepository: ApplicationRepository) {}
 
   async findById(id: number): Promise<ApplicationEntity | undefined> {
     return this.applicationRepository.findById(id);

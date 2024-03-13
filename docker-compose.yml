@@ -29,6 +29,12 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    command: >
+      bash -c "
+        /usr/bin/pg_ctlcluster 15 main start &&
+        /usr/bin/psql -U admin -d postgres -c 'CREATE DATABASE challenge;' &&
+        /usr/bin/pg_ctlcluster 15 main stop
+      "
 
   pgadmin:
     image: dpage/pgadmin4
